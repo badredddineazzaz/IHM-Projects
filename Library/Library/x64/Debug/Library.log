@@ -1,0 +1,24 @@
+﻿  Library.cpp
+C:\Users\abzdr\Documents\m1\IHM\Library\Library\Library.cpp(71,69): warning C4244: 'argument' : conversion de 'double' en '_Tp', perte possible de données
+          with
+          [
+              _Tp=int
+          ]
+C:\Users\abzdr\Documents\m1\IHM\Library\Library\Library.cpp(71,42): warning C4244: 'argument' : conversion de 'double' en '_Tp', perte possible de données
+          with
+          [
+              _Tp=int
+          ]
+C:\Users\abzdr\Documents\m1\IHM\Library\Library\Library.cpp(82,65): warning C4267: '/=' : conversion de 'size_t' en '_Tp', perte possible de données
+          with
+          [
+              _Tp=int
+          ]
+C:\Users\abzdr\Documents\m1\IHM\Library\Library\Library.cpp(83,65): warning C4267: '/=' : conversion de 'size_t' en '_Tp', perte possible de données
+          with
+          [
+              _Tp=int
+          ]
+C:\Users\abzdr\Documents\m1\IHM\Library\Library\Library.cpp(115,21): warning C4267: 'initialisation' : conversion de 'size_t' en 'int', perte possible de données
+C:\Users\abzdr\Documents\m1\IHM\Library\Library\Library.cpp(140,32): warning C4267: 'initialisation' : conversion de 'size_t' en 'int', perte possible de données
+  Library.vcxproj -> C:\Users\abzdr\Documents\m1\IHM\Library\x64\Debug\Library.exe
