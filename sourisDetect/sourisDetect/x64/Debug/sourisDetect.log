@@ -1,0 +1,25 @@
+﻿  sourisDetect.cpp
+C:\Users\abzdr\Documents\m1\IHM\sourisDetect\sourisDetect\sourisDetect.cpp(50,69): warning C4244: 'argument' : conversion de 'double' en '_Tp', perte possible de données
+          with
+          [
+              _Tp=int
+          ]
+C:\Users\abzdr\Documents\m1\IHM\sourisDetect\sourisDetect\sourisDetect.cpp(50,42): warning C4244: 'argument' : conversion de 'double' en '_Tp', perte possible de données
+          with
+          [
+              _Tp=int
+          ]
+C:\Users\abzdr\Documents\m1\IHM\sourisDetect\sourisDetect\sourisDetect.cpp(61,65): warning C4267: '/=' : conversion de 'size_t' en '_Tp', perte possible de données
+          with
+          [
+              _Tp=int
+          ]
+C:\Users\abzdr\Documents\m1\IHM\sourisDetect\sourisDetect\sourisDetect.cpp(62,65): warning C4267: '/=' : conversion de 'size_t' en '_Tp', perte possible de données
+          with
+          [
+              _Tp=int
+          ]
+C:\Users\abzdr\Documents\m1\IHM\sourisDetect\sourisDetect\sourisDetect.cpp(65,91): warning C4244: 'argument' : conversion de 'double' en 'int', perte possible de données
+C:\Users\abzdr\Documents\m1\IHM\sourisDetect\sourisDetect\sourisDetect.cpp(64,60): warning C4244: 'argument' : conversion de 'double' en 'int', perte possible de données
+C:\Users\abzdr\Documents\m1\IHM\sourisDetect\sourisDetect\sourisDetect.cpp(73,53): warning C4244: '=' : conversion de 'int64' en 'int', perte possible de données
+  sourisDetect.vcxproj -> C:\Users\abzdr\Documents\m1\IHM\sourisDetect\x64\Debug\sourisDetect.exe
