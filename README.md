@@ -1,42 +1,53 @@
-# Projet IHM (Interface Homme-Machine)
+# Vision-Based Interaction
 
-Ce référentiel (repo) contient plusieurs projets liés au module IHM, chacun se concentrant sur des fonctionnalités spécifiques pour une expérience utilisateur interactive.
+**Expériences d’interface homme-machine en C++ et OpenCV.**
 
-## 1. **sourisDetect**
+[Projets](#projets) · [Prise en main](#prise-en-main) · [Limites](#limites) · [Portfolio](https://github.com/badredddineazzaz)
 
-Le projet "sourisDetect" utilise la webcam pour détecter des objets rouges en temps réel et ajuste la position du curseur en conséquence. L'objectif principal est de démontrer le suivi et le contrôle du curseur à l'aide de la détection d'objet.
+Ce dépôt de travaux pratiques explore le suivi d’objets par webcam et son utilisation dans une interface : déplacement du curseur Windows, détection de mains et navigation dans des images. Chaque dossier contient une solution Visual Studio indépendante.
 
-### Comment Utiliser
+## Projets
 
-1. Assurez-vous d'avoir une webcam fonctionnelle.
-2. Exécutez le programme pour détecter des objets rouges et suivre le curseur.
-3. Un clic droit est simulé si un objet rouge est maintenu pendant une certaine période.
+| Projet | Comportement présent dans le code |
+| --- | --- |
+| [sourisDetect](sourisDetect) | Segmentation HSV d’un objet rouge, suivi de son centre et lissage sur 10 positions ; déplacement du curseur Windows et clic droit après un maintien détecté |
+| [Library](Library) | Suivi d’objet et contrôle du curseur dans un thread ; visualisation d’images JPG et bandeau de sélection dans un autre |
+| [HandDetection](HandDetection) | Détection par classificateur en cascade ; affichage et coordonnées du centre des mains détectées |
+| [Calibrate](Calibrate) | Prototype de visualiseur JPG avec bandeau de miniatures et navigation clavier |
 
-## 2. **Librairie et Concaténation d'Images**
+Le dossier `Calibrate` contient actuellement un visualiseur d’images. Le réglage interactif des seuils de couleur décrit dans l’ancien README n’est pas implémenté.
 
-Le projet "Librairie et Concaténation d'Images" combine deux fonctionnalités distinctes : la détection de mouvement par webcam et la concaténation d'images à partir d'un dossier spécifique.
+## Technologies
 
-### Comment Utiliser
+C++, OpenCV et Visual Studio. `sourisDetect` et `Library` utilisent aussi les fonctions de l’API Windows pour agir sur le curseur.
 
-1. Modifiez les chemins des images et assurez-vous qu'elles existent.
-2. Exécutez le programme pour visualiser les images concaténées et déplacer le curseur pour sélectionner des images.
+## Prise en main
 
-## 3. **Détection de Main**
+```bash
+git clone https://github.com/badredddineazzaz/IHM-Projects.git
+cd IHM-Projects
+```
 
-Le projet "Détection de Main" utilise une webcam et un classificateur en cascade pour détecter les mains en temps réel et marquer leur position sur l'image.
+1. Sous Windows, ouvrez la solution `.sln` du projet choisi dans Visual Studio avec les outils C++.
+2. Installez OpenCV pour C++ et configurez ses chemins d’inclusion, bibliothèques et DLL pour la configuration de compilation sélectionnée. Le dépôt ne fournit pas de procédure d’installation portable.
+3. Vérifiez les paramètres locaux avant de compiler : les projets webcam ouvrent la caméra d’index **1** ; `HandDetection` attend un fichier de cascade externe ; `Library` et `Calibrate` utilisent des chemins de dossiers JPG écrits dans le code. Le fichier de cascade n’est pas inclus dans le dépôt.
+4. Compilez la solution choisie puis lancez-la. Les commandes de compilation et la capture caméra n’ont pas été exécutées pendant cette révision documentaire.
 
-### Comment Utiliser
+Ces paramètres sont des constantes dans les sources, pas des options de lancement. Une adaptation à votre poste peut donc nécessiter une modification locale du code.
 
-1. Assurez-vous d'avoir une webcam fonctionnelle.
-2. Chargez le fichier de cascade spécifié.
-3. Exécutez le programme pour détecter les mains et afficher les points rouges.
+## Utilisation
 
-## 4. **Calibration (En Cours de Développement)**
+- Pour `sourisDetect`, présentez un objet rouge à la webcam et observez le déplacement du curseur. Le programme peut agir sur le pointeur du système et déclencher un clic droit.
+- Pour `Library`, fournissez des images JPG et utilisez le bandeau pour sélectionner une image.
+- Pour `HandDetection`, fournissez un classificateur compatible avant le lancement.
+- La touche **Échap** est gérée dans les boucles d’affichage pour quitter.
 
-Le module de calibration est en cours de développement et vise à permettre à l'utilisateur d'ajuster les paramètres pour une détection précise des couleurs.
+## Limites
 
-### Comment Utiliser (À Compléter)
+Il s’agit de prototypes pédagogiques avec des paramètres fixes. La détection dépend de la lumière, des seuils de couleur et de la caméra. Le maintien du clic droit dans `sourisDetect` ne comporte pas de remise à zéro explicite pour répéter l’action ; ce README ne promet donc pas un contrôle gestuel complet.
 
-1. Lancez le programme et accédez au module de calibration.
-2. Suivez les instructions pour ajuster les paramètres de détection.
+Les dossiers de compilation et exécutables historiques sont conservés. Aucun résultat de performance, compatibilité matérielle ou validation automatisée n’est revendiqué.
 
+## Pistes de travail
+
+Rendre les chemins et paramètres configurables, documenter une compilation reproductible et ajouter une démonstration réelle avant de présenter ces prototypes comme des applications prêtes à distribuer.
